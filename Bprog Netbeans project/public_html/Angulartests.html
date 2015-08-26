@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app>
+    <head>
+        <title>Angular Tests</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/bprog.js" type="text/javascript"></script>
+    </head>
+    <!--<body ng-init="people=bprog.angulartests.data.people">-->
+    <body ng-init="people=[{name:'Porig',city:'Marsport'},{name:'Jono',city:'langley'},{name:'Andrew',city:'bearsden'}]">
+        <h2>Filter by Name</h2>
+        <input type="text" ng-model="nameFilter.name"/>
+        <table>
+            <tr>
+                <td>Name</td><td>City</td>
+            </tr>
+            <tr ng-repeat="person in people | filter:nameFilter | orderBy:'name'">
+                <td>{{person.name}}</td>
+                <td>{{person.city | uppercase}}</td>
+            </tr>
+        </table>
+        <script src="libs/angular/angular.js" type="text/javascript"></script>
+    </body>
+</html>

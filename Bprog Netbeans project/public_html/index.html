@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html data-ng-app>
+    <head>
+        <title>Borthwick Programming</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body ng-init="name = 'James'">
+
+        <h2>ng-model eg</h2>
+        <p>Name: <input type="text" ng-model="bprog"/></p>
+        <p>What I am typing: {{bprog}}</p>
+
+        <h2>Using directives eg</h2>
+        <div ng-hide="isHidden">
+            Name: <input type="text" ng-model="name"/>
+        </div>
+        Hide: <input type="checkbox" ng-model="isHidden"/>
+        <br/>
+        <!-- Alternative to double curlies -->
+        <div ng-bind="name"></div>
+        <button ng-click="name='Bob'" >Change name</button>
+
+        <script src="libs/angular/angular.js" type="text/javascript"></script>
+    </body>
+</html>
