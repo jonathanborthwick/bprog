@@ -2,12 +2,12 @@ function rev(soFar, count){
     console.log("asString: " + soFar );
     console.log("count: " + count);
     var len = soFar.length;
-    var ret = soFar;
+    var ret = soFar;//ret needs to be a refference to soFar
     if(len > count){
         var subd = soFar.substring(1,len);
         var first = soFar[0];
         //we want to inject the first letter at the index position one back from the length, minus what the count is at this point
-        var indexOfInsert = len-1 - count;
+        var indexOfInsert = len-1 - count;//so if count is 0 and length is 5, we want 4 (4 -0)
         var asArray = subd.split("");
         asArray.splice(indexOfInsert,0,first);
         count++;
@@ -16,10 +16,10 @@ function rev(soFar, count){
         for(var i = 0; i<len; i++){
             asString+=asArray[i];
         }
-        ret = rev(asString,count);
+        ret = rev(asString,count);//ret always needs to be reasigned
     }
     //only get here when count is greater than the length of the original string
-    return ret;//will always be a refference to soFar, which is being reasigned in the recursive loop
+    return ret;//will always be a reference to soFar, which is being reasigned in the recursive loop
 }
 
 var reversed = rev("Hello",0);
