@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="bprogModule">
+    <head>
+        <title>Angular Scope tests</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body data-ng-controller="CustomersController as ctrl">
+        <h2>Scope tests</h2>
+        <table border="1">
+            <tr>
+                <th ng-click="doSort('name')">Name</th>
+                <th ng-click="doSort('city')">City</th>
+                <th ng-click="doSort('joined')">Joined</th>
+            </tr>
+            <tr ng-repeat="cust in ctrl.customers | filter:customerFilter | orderBy:sortBy:reverse">
+                <td>{{cust.name}}</td><td>{{cust.city}}</td><td>{{cust.joined}}</td>
+            </tr>
+        </table>
+        <p>Total Customers: <span >{{ctrl.customers.length}}</span></p>
+        <script src="libs/angular/angular.js" type="text/javascript"></script>
+        <script src="js/bprog.js" type="text/javascript"></script>
+
+    </body>
+</html>
