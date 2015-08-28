@@ -1,9 +1,28 @@
+function gbi(id){
+    var elem = document.getElementById(id);
+    return elem;
+}
+
 function reverse(){
-    var itsValue = document.getElementById("toReverse").value;
+    var itsValue = gbi("toReverse").value;
     console.log("Value: ",itsValue);
     var reversed = rev(itsValue,0);
-    document.getElementById("reverseResult").innerHTML = reversed;
-    document.getElementById("message").removeAttribute("class");
+    gbi("reverseResult").innerHTML = reversed;
+    var classes = gbi("message").getAttribute("class");
+    console.log("classes:",classes);
+    gbi("message").removeAttribute("class");
+    var classSplits = classes.split(" ");
+    var leaveNonHideClasses = "";
+    for(var i = 0; i<classSplits.length; i++){
+        var thisClass = classSplits[i];
+        if(thisClass != "hide"){
+            leaveNonHideClasses +=thisClass;
+            if(i < classSplits.length-1){
+                leaveNonHideClasses+=" ";
+            }
+        }
+    }
+    gbi("message").setAttribute("class",leaveNonHideClasses);
 }
 
 function rev(soFar, count){
