@@ -1,8 +1,16 @@
+function reverse(){
+    var itsValue = document.getElementById("toReverse").value;
+    console.log("Value: ",itsValue);
+    var reversed = rev(itsValue,0);
+    document.getElementById("reverseResult").innerHTML = reversed;
+    document.getElementById("message").removeAttribute("class");
+}
+
 function rev(soFar, count){
     console.log("asString: " + soFar );
     console.log("count: " + count);
     var len = soFar.length;
-    var ret = soFar;//ret needs to be a refference to soFar
+    var ret = soFar;//ret needs to be a reference to soFar
     if(len > count){
         var subd = soFar.substring(1,len);
         var first = soFar[0];
@@ -22,5 +30,8 @@ function rev(soFar, count){
     return ret;//will always be a reference to soFar, which is being reasigned in the recursive loop
 }
 
-var reversed = rev("Hello",0);
+//test
+/*
+var reversed = rev("Sophie",0);
 console.log("result",reversed);
+*/

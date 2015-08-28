@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Algorythms 1 Test</title>
+        <title>Algorithms 1 Test</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="../js/test/algorithms1.js" type="text/javascript"></script>
+        <style>
+            .hide{
+                display:none;
+            } 
+        </style>
     </head>
     <body>
-        <h2>See console</h2>
+        <h2>Verbose JavaScript reversing algorithm</h2>
+        <p>Type in text: <input type="text" id="toReverse" /> <input type="button" onclick="reverse();" value="Click to reverse"/></p>
+        <p>Reversed result: <span id="reverseResult"></span></p>
+        <p id="message" class="hide"><i>See console for iteration output of recursive function</i></p>
     </body>
 </html>
